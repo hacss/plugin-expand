@@ -1,0 +1,39 @@
+{
+  "name": "@hacss/plugin-expand",
+  "version": "1.0.0",
+  "description": "Create simple shorthand properties that expand one declaration into multiple.",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hacss/plugin-expand.git"
+  },
+  "keywords": [
+    "hacss",
+    "plugin",
+    "expand",
+    "properties",
+    "declarations",
+    "css",
+    "atomic",
+    "inline",
+    "styles"
+  ],
+  "author": "Nick Saunders",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hacss/plugin-expand/issues"
+  },
+  "homepage": "https://hacss.io/",
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^7.1.2"
+  },
+  "dependencies": {
+    "@hacss/compose-plugins": "^1.0.1",
+    "@hacss/plugin-copy": "^1.0.0",
+    "@hacss/plugin-delete": "^1.0.0"
+  }
+}
