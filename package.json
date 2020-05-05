@@ -4,7 +4,9 @@
   "description": "Create simple shorthand properties that expand one declaration into multiple.",
   "main": "index.js",
   "scripts": {
-    "test": "mocha test"
+    "prepublishOnly": "webpack",
+    "pretest": "webpack",
+    "test": "node test"
   },
   "repository": {
     "type": "git",
@@ -28,20 +30,23 @@
   },
   "homepage": "https://hacss.io/",
   "devDependencies": {
+    "@babel/core": "^7.9.6",
+    "@babel/preset-env": "^7.9.6",
+    "@hacss/compose-plugins": "^1.0.1",
     "@hacss/eslint-config": "^1.0.0",
+    "@hacss/plugin-copy": "^1.1.0",
+    "@hacss/plugin-delete": "^1.1.0",
     "@hacss/prettier-config": "^1.0.0",
-    "chai": "^4.2.0",
+    "babel-loader": "^8.1.0",
+    "core-js-pure": "^3.6.5",
     "eslint": "^6.8.0",
     "husky": "^4.2.5",
     "lint-staged": "^10.2.2",
-    "mocha": "^7.1.2",
-    "prettier": "^2.0.5"
+    "prettier": "^2.0.5",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11"
   },
-  "dependencies": {
-    "@hacss/compose-plugins": "^1.0.1",
-    "@hacss/plugin-copy": "^1.0.0",
-    "@hacss/plugin-delete": "^1.0.0"
-  },
+  "dependencies": {},
   "prettier": "@hacss/prettier-config",
   "husky": {
     "hooks": {
@@ -54,5 +59,8 @@
       "eslint --cache --fix",
       "npm test"
     ]
+  },
+  "peerDependencies": {
+    "@hacss/core": "^1.0.0"
   }
 }

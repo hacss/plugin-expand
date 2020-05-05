@@ -1,23 +1,22 @@
-const { expect } = require("chai");
-const expandPlugin = require("../index.js");
+const assert = require("assert");
+const expandPlugin = require("../dist/hacss-plugin-expand.umd.js");
 
-describe("expand plugin", () => {
-  const spec = {
-    "margin-x": ["margin-left", "margin-right"],
-  };
+const spec = {
+  "margin-x": ["margin-left", "margin-right"],
+};
 
-  const [ expand, properties ] = expandPlugin(spec);
+const test = (actual, expected) => {
+  console.log(`${JSON.stringify(actual)} === ${JSON.stringify(expected)}`);
+  assert.deepEqual(actual, expected);
+};
 
-  it("should expand specified properties", () => {
-    expect(expand({ "margin-x": "20px", "padding-top": "40px" }))
-      .to.deep.equal({
-        "margin-left": "20px",
-        "margin-right": "20px",
-        "padding-top": "40px",
-      });
-  });
+const [expand, properties] = expandPlugin(spec);
 
-  it("should add the properties in the spec to the list of recognized properties", () => {
-    expect(properties).to.deep.equal(Object.keys(spec));
-  });
+test(expand({ "margin-x": "20px", "padding-top": "40px" }), {
+  "margin-left": "20px",
+  "margin-right": "20px",
+  "padding-top": "40px",
 });
+
+test(properties, Object.keys(spec));
+console.log("All tests passed.");
