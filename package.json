@@ -1,6 +1,6 @@
 {
   "name": "@hacss/plugin-expand",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "description": "Create simple shorthand properties that expand one declaration into multiple.",
   "main": "dist/hacss-plugin-expand.umd.js",
   "scripts": {
